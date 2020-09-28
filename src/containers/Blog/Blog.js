@@ -5,7 +5,17 @@ import FullPost from '../../components/FullPost/FullPost';
 import NewPost from '../../components/NewPost/NewPost';
 import './Blog.css';
 
+const axios = require('axios');
 class Blog extends Component {
+
+    componentDidMount(){
+        axios.get('http://jsonplaceholder.typicode.com/posts')
+        .then(response=>{
+            console.log(response);
+        }).catch(reject=>{
+            console.log(reject);
+        });
+    }
     render () {
         return (
             <div>
